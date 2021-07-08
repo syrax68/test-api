@@ -11,8 +11,8 @@ import Album from '../Album/album';
 
 
 export default function  Blog() {
-    const [posts, setPosts] = useState<any>(null);
-    const [itemToShow, setItemToShow] = useState<number>(2);
+    const [posts, setPosts] = useState(null);
+    const [itemToShow, setItemToShow] = useState(2);
     
     useEffect (() => {
         getPosts().then(data => setPosts(data));
@@ -28,7 +28,7 @@ export default function  Blog() {
             <MainPost post={posts[posts.length-1]} />
             <BlocTitle>Nos Postes</BlocTitle>
             <Grid container spacing={4}>
-                {posts?.map((post:any, key:number) => (
+                {posts?.map((post, key) => (
                   <Fragment key={key}>
                     {key < itemToShow? <FeaturedPost key={post.id} post={post} /> : null}
                   </Fragment>

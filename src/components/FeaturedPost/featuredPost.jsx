@@ -21,13 +21,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function FeaturedPost(props:any) {
+export default function FeaturedPost(props) {
   const classes = useStyles();
-  const [showComments, setShowComments] = useState<boolean>(false);
+  const [showComments, setShowComments] = useState(false);
   const { post } = props;
-  const [itemToShow, setItemToShow] = useState<number>(3);
-  const [comments, setComments] = useState<any>(null);
-  const [user, setUser] = useState<any>(null);
+  const [itemToShow, setItemToShow] = useState(3);
+  const [comments, setComments] = useState(null);
+  const [user, setUser] = useState(null);
   
     
   useEffect (() => {
@@ -42,8 +42,8 @@ export default function FeaturedPost(props:any) {
     setShowComments(true);
   }
 
-  const handleUpdate = async(data:any) =>{
-    const { value: formValues }:any = await Swal.fire({
+  const handleUpdate = async(data) =>{
+    const { value: formValues } = await Swal.fire({
       title: 'Modification du poste '+ data.id ,
       html:
         '<p> Titre </p>'+
@@ -53,8 +53,8 @@ export default function FeaturedPost(props:any) {
       focusConfirm: false,
       preConfirm: () => {
         return [
-          (document.getElementById('title') as any)?.value,
-          (document.getElementById('description') as any)?.value
+          document.getElementById('title')?.value,
+          document.getElementById('description')?.value
         ]
       }
     })
@@ -136,7 +136,7 @@ export default function FeaturedPost(props:any) {
                 <SendIcon />
             </IconButton>
             {comments &&<GridComments>  
-              {comments.map((item:any, key:number)=>
+              {comments.map((item, key)=>
               <>
               {key < itemToShow?
                 <Grid item>

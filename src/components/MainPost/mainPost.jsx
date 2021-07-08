@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { getUserOfPost } from '../../api/apiget';
 
-const useStyles = makeStyles((theme:any) => ({
+const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
@@ -35,11 +35,11 @@ const useStyles = makeStyles((theme:any) => ({
   },
 }));
 
-export default function MainPost(props:any) {
+export default function MainPost(props) {
   const classes = useStyles();
   const { post } = props;
 
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState(null);
     
   useEffect (() => {
     getUserOfPost(post.userId).then(data => setUser(data));

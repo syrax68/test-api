@@ -18,7 +18,7 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme:any) => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     // marginTop: theme.spacing(8),
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme:any) => ({
   },
 }));
 
-export default function Footer(props:any) {
+export default function Footer(props) {
   const classes = useStyles();
 
   return (

@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { Title } from './header.style';
 
-const useStyles = makeStyles((theme:any) => ({
+const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme:any) => ({
   },
 }));
 
-export default function Header(props:any) {
+export default function Header(props) {
   const classes = useStyles();
   const { title } = props;
 

@@ -13,7 +13,7 @@ export const getPosts = async() =>{
     return response.data;
 }
 
-export const getPostsById = async(id:number) =>{
+export const getPostsById = async(id) =>{
     const response = await axios.get(url+posturl+'/'+id);
     
     return response.data;
@@ -25,31 +25,31 @@ export const getAlbum = async() =>{
     return response.data;
 }
 
-export const getPhotosOfAlbum = async(id:number) =>{
+export const getPhotosOfAlbum = async(id) =>{
     const response = await axios.get(url+photourl+'?albumId='+id)
 
     return response.data;
 }
 
-export const getPostsByUserid = async(id:number) =>{
+export const getPostsByUserid = async(id) =>{
     const response = await axios.get(url+posturl+'?userId='+id)
     
     return response.data;
 }
 
-export const getCommentsOfPost = async(id:number) =>{
+export const getCommentsOfPost = async(id) =>{
     const response = await axios.get(url+commenturl+'?postId='+id)
     
     return response.data;
 }
 
-export const getUserOfPost = async(id:number) =>{
+export const getUserOfPost = async(id) =>{
     const response = await axios.get(url+userurl+'/'+id)
     
     return response.data;
 }
 
-export const updatePost = async(post:any, data:any) =>{
+export const updatePost = async(post, data) =>{
     const input = JSON.stringify({
         id: post.id,
         title: data[0],
@@ -67,7 +67,7 @@ export const getUsers = async() =>{
     return response.data;
 }
 
-export const deletePost = async(id:number) =>{
+export const deletePost = async(id) =>{
     const response = await axios.delete(url+posturl+'/'+id)
     console.log(response)
     return response.data;

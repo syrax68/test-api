@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles, createStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { getAlbum } from '../../api/apiget';
 import Typography from '@material-ui/core/Typography';
 import { CustomButton } from './album.style';
 import { GridPhoto } from '../GridPhoto/gridphoto';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Album() {
   const classes = useStyles();
-  const [album, setAlbum] = useState<any>(null);
-  const [itemToShow, setItemToShow] = useState<number>(3);
+  const [album, setAlbum] = useState(null);
+  const [itemToShow, setItemToShow] = useState(3);
 
   useEffect (() => {
     getAlbum().then(data => setAlbum(data));
@@ -33,7 +33,7 @@ export default function Album() {
   return (
     <Grid container className={classes.root} spacing={2}>
          <Grid item xs={12}>
-            {album?.map((item:any, key:number)=>(
+            {album?.map((item, key)=>(
                 <Fragment key={key}>
                   {key < itemToShow?
                       <Grid>
